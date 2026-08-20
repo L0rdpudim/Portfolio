@@ -1,6 +1,6 @@
-/* IMPORTS  */
+/* IMPORTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
 /* RESET */
 
@@ -10,50 +10,29 @@
     box-sizing: border-box;
 }
 
-/* BODY */
+/* CONFIGURAÇÕES GERAIS */
 
-body {
-
-  min-height: 100vh;
-  font-family: "Nunito", sans-serif;
-  color: white;
-  background: linear-gradient(
-    120deg,
-    #004aad,
-    #490450,
-    #5e17eb,
-    #004aad
-  );
-
-  background-size: 300% 300%;
-  animation: gradientAnimation 35s ease infinite;
-
-  min-height: 100vh;
-  margin: 0;
+html {
+    scroll-behavior: smooth;
 }
 
-/* ANIMAÇÃO DO DEGRADÊ */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+body {
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+    color: white;
+    margin: 0;
 }
 
 /* NAVBAR */
 
 .headerPai {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 
 .navbar {
@@ -63,17 +42,12 @@ body {
 
 .navbar ul {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-around;
-
     list-style: none;
-
-    background-color: #000;
-
+    background: #000;
     border-radius: 0 0 25px 25px;
-
     padding: 0 8px;
 }
 
@@ -81,136 +55,215 @@ body {
     flex: 1;
 }
 
-.navbar li a {
+.navbar a {
     display: block;
-
     padding: 18px 8px;
-
     color: white;
-
-    font-size: 16px;
-    font-weight: 500;
-
+    font-size: 13px;
+    font-weight: 600;
     text-align: center;
-
     text-decoration: none;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar li a:hover {
-    color: #8f5cff;
-
+.navbar a:hover {
+    color: #7628ff;
     transform: translateY(-2px);
 }
 
-/* INÍCIO */
-.inicio {
-    width: 100%;
-    min-height: calc(100vh - 60px);
+/* HERO */
 
+.hero {
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 110px;
+    justify-content: center;
+    padding: 120px 30px 80px;
+    background: linear-gradient(
+        120deg,
+        #004aad,
+        #211d8f,
+        #5e17eb,
+        #490450
+    );
+    background-size: 300% 300%;
+    animation: gradientAnimation 20s ease infinite;
 }
 
-/* TÍTULO E DESCRIÇÃO*/
+/* ANIMAÇÃO DO DEGRADÊ */
 
-.title {
-    font-size: clamp(45px, 5vw, 70px);
-    font-weight: 500;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
 
-    text-align: center;
+    50% {
+        background-position: 100% 50%;
+    }
 
-    margin-bottom: 115px;
-
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.35),
-        0 0 18px rgba(130, 70, 255, 0.45);
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.descricao {
-    width: 80%;
-    max-width: 890px;
+/* TITULO */
 
-    border: 2px solid white;
-
-    padding: 7px 25px 9px;
-
-    text-align: center;
-}
-
-.destaque {
-    font-size: 24px;
+.hero h1 {
+    font-size: clamp(35px, 5vw, 58px);
     font-weight: 700;
-
-    margin-bottom: 2px;
+    text-align: center;
+    margin-bottom: 90px;
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.25),
+        0 0 20px rgba(120, 40, 255, 0.5);
 }
 
-.texto {
-    font-size: 22px;
-    font-weight: 400;
+/* DESCRIÇÃO */
 
-    line-height: 1.5;
+.heroDescricao {
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid white;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 20px;
 }
 
-/* RESPONSIVIDADE */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        width: 70%;
-    }
-
-    .title {
-        margin-bottom: 80px;
-    }
-
-    .descricao {
-        width: 85%;
-    }
-
-    .texto {
-        font-size: 19px;
-    }
-
+.heroDescricao .destaque {
+    font-size: 18px;
+    font-weight: 700;
 }
+
+.heroDescricao p {
+    font-size: 16px;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    background: #000;
+    padding:  5% 0;
+    border-radius: 20px;
+}
+
+/* SOBRE */
+
+.sobre {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 60px 5%;
+    overflow: hidden;
+}
+
+/* TEXTO */
+
+.sobreTexto {
+    width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.sobreTexto h2 {
+    color: #7628ff;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sobreNome {
+    margin-bottom: 22px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sobreTexto p {
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* IMAGEM SOBRE */
+
+.sobreImagem {
+    position: relative;
+    z-index: 2;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 5px solid #7628ff;
+    overflow: hidden;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobreImagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* CELULAR */
 
 @media (max-width: 600px) {
+    /* NAVBAR */
 
     .navbar {
         width: 95%;
     }
 
-    .navbar li a {
-        font-size: 12px;
-        padding: 16px 4px;
+    .navbar a {
+        font-size: 10px;
+        padding: 16px 3px;
     }
 
-    .inicio {
-        padding-top: 90px;
+    /* HERO */
+
+    .hero {
+        min-height: 450px;
+        padding-top: 100px;
     }
 
-    .title {
-        font-size: 38px;
-        margin-bottom: 70px;
+    .hero h1 {
+        margin-bottom: 60px;
+        font-size: 35px;
     }
 
-    .descricao {
-        width: 90%;
-
-        padding: 12px 10px;
+    .heroDescricao {
+        width: 95%;
+        padding: 12px;
     }
 
-    .destaque {
-        font-size: 19px;
-    }
-
-    .texto {
+    .heroDescricao .destaque {
         font-size: 16px;
+    }
+
+    .heroDescricao p {
+        font-size: 13px;
+    }
+
+    /* SOBRE */
+
+    .sobre {
+        padding: 50px 5%;
+    }
+
+    .sobreTexto h2 {
+        font-size: 32px;
+    }
+
+    .sobreImagem {
+        width: 220px;
+        height: 220px;
     }
 }
