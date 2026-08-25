@@ -336,3 +336,111 @@ body {
         height: 220px;
     }
 }
+
+/* HABILIDADES */
+
+.habilidades {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    align-items: stretch;
+    gap: 60px;
+    padding: 80px 7%;
+    background: #000;
+}
+
+.habilidadesGrupo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.habilidadesGrupo h2 {
+    margin-bottom: 55px;
+    color: #7628ff;
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1;
+    text-align: center;
+}
+
+.habilidadesGrid {
+    width: 100%;
+    max-width: 430px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+    gap: 50px 55px;
+    justify-items: center;
+}
+
+.habilidadeItem {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.habilidadeImagem {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.habilidadeImagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.habilidadesDivisoria {
+    width: 2px;
+    min-height: 330px;
+    background: white;
+    border-radius: 99px;
+    align-self: center;
+}
+
+/* HABILIDADES - CELULAR */
+
+@media (max-width: 700px) {
+
+    .habilidades {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 65px 6%;
+    }
+
+    .habilidadesGrupo h2 {
+        margin-bottom: 35px;
+        font-size: 32px;
+    }
+
+    .habilidadesGrid {
+        max-width: 360px;
+        gap: 35px 25px;
+    }
+
+    .habilidadeItem {
+        width: 120px;
+        font-size: 13px;
+    }
+
+    .habilidadeImagem {
+        width: 90px;
+        height: 90px;
+    }
+
+    .habilidadesDivisoria {
+        width: 75%;
+        min-height: 2px;
+        margin: 0 auto;
+    }
+}
