@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
-
 /* RESET */
 
 * {
@@ -10,7 +9,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 
 /* CONFIGURAÇÕES GERAIS */
 
@@ -25,7 +23,6 @@ body {
     color: white;
     background: #000;
 }
-
 
 /* NAVBAR */
 
@@ -67,10 +64,7 @@ body {
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar a:hover {
@@ -82,7 +76,6 @@ body {
     display: none;
 }
 
-
 /* HERO */
 
 .hero {
@@ -90,7 +83,6 @@ body {
     display: flex;
     align-items: center;
     padding: 120px 8% 80px;
-
     background: linear-gradient(
         120deg,
         #004aad,
@@ -98,30 +90,23 @@ body {
         #5e17eb,
         #490450
     );
-
     background-size: 300% 300%;
     animation: gradientAnimation 20s ease infinite;
 }
 
-
 /* ANIMAÇÃO DO GRADIENTE */
 
 @keyframes gradientAnimation {
-
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
-
 }
-
 
 /* CONTEÚDO DO HERO */
 
@@ -131,29 +116,26 @@ body {
     margin: 0 auto;
 }
 
-
 /* TAG */
 
 .heroTag {
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     color: #c3b1ff;
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     font-weight: 800;
     letter-spacing: 2px;
 }
-
 
 /* TÍTULO */
 
 .hero h1 {
     max-width: 800px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     color: white;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -2px;
-
     text-shadow:
         0 0 8px rgba(255, 255, 255, 0.12),
         0 0 25px rgba(120, 40, 255, 0.3);
@@ -163,17 +145,15 @@ body {
     color: #d0a8ff;
 }
 
-
 /* TEXTO */
 
 .heroTexto {
-    max-width: 650px;
-    margin-bottom: 35px;
+    max-width: 700px;
+    margin-bottom: 38px;
     color: rgba(255, 255, 255, 0.88);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.7;
 }
-
 
 /* BOTÕES */
 
@@ -184,17 +164,13 @@ body {
 }
 
 .heroBotoes a {
-    padding: 14px 22px;
+    padding: 15px 24px;
     border-radius: 10px;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 700;
     text-decoration: none;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
-
 
 .botaoPrimario {
     background: rgba(0, 0, 0, 0.25);
@@ -210,7 +186,6 @@ body {
     background: #171717;
 }
 
-
 /* CONTEÚDO */
 
 .conteudo {
@@ -222,33 +197,35 @@ body {
     z-index: 2;
 }
 
-
 /* SOBRE */
 
 .sobre {
     position: relative;
-    min-height: 420px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 70px;
-    padding: 80px 7%;
+    justify-content: center;
+    gap: 50px;
+    padding: 90px 40px;
     overflow: hidden;
 }
-
 
 /* TEXTO SOBRE */
 
 .sobreTexto {
-    width: 55%;
+    width: 58%;
+    max-width: 680px;
     position: relative;
     z-index: 2;
 }
 
 .sobreTexto h2 {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     color: white;
-    font-size: 3rem;
+    font-size: 3.4rem;
     font-weight: 800;
     line-height: 1.15;
     text-align: left;
@@ -259,26 +236,25 @@ body {
 }
 
 .sobreNome {
-    margin-bottom: 22px;
-    font-size: 1.0625rem;
+    margin-bottom: 24px;
+    font-size: 1.1875rem;
     font-weight: 600;
 }
 
 .sobreTexto p {
-    max-width: 650px;
-    margin-bottom: 15px;
-    font-size: 0.9375rem;
-    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 17px;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
-
 
 /* IMAGEM SOBRE */
 
 .sobreImagem {
     position: relative;
     z-index: 2;
-    width: 280px;
-    height: 280px;
+    width: 440px;
+    height: 440px;
     flex-shrink: 0;
     border-radius: 50%;
     border: 5px solid #9517d4;
@@ -287,6 +263,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow:
+        0 0 20px rgba(149, 23, 212, 0.35),
+        0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 .sobreImagem img {
@@ -295,7 +274,6 @@ body {
     object-fit: cover;
     display: block;
 }
-
 
 /* HABILIDADES */
 
@@ -317,7 +295,7 @@ body {
 .habilidadesGrupo h2 {
     margin-bottom: 55px;
     color: #9517d4;
-    font-size: 3rem;
+    font-size: 3.4rem;
     font-weight: 800;
     line-height: 1;
     text-align: center;
@@ -327,12 +305,7 @@ body {
     width: 100%;
     max-width: 430px;
     display: grid;
-
-    grid-template-columns: repeat(
-        2,
-        minmax(110px, 1fr)
-    );
-
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
     gap: 50px 55px;
     justify-items: center;
 }
@@ -344,7 +317,7 @@ body {
     align-items: center;
     gap: 12px;
     color: white;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
     transition: transform 0.3s ease;
@@ -369,8 +342,6 @@ body {
     height: 100%;
     object-fit: contain;
     display: block;
-    
-    /* Filtro cinza para as imagens*/
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
@@ -387,7 +358,6 @@ body {
     align-self: center;
 }
 
-
 /* SEÇÕES FUTURAS */
 
 .secao {
@@ -402,24 +372,22 @@ body {
 }
 
 .secao h2 {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     color: white;
-    font-size: 3rem;
+    font-size: 3.4rem;
     font-weight: 800;
 }
 
 .secao p {
-    max-width: 600px;
+    max-width: 650px;
     color: rgba(255, 255, 255, 0.75);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.7;
 }
-
 
 /* CELULAR */
 
 @media (max-width: 700px) {
-
     /* NAVBAR */
 
     .headerPai {
@@ -462,9 +430,7 @@ body {
         visibility: hidden;
         pointer-events: none;
         transform: translateY(-10px);
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .navbar ul.menuAberto {
@@ -484,7 +450,6 @@ body {
         text-align: left;
     }
 
-
     /* HERO */
 
     .hero {
@@ -493,22 +458,22 @@ body {
     }
 
     .heroTag {
-        font-size: 0.75rem;
+        font-size: 0.8125rem;
         line-height: 1.5;
         letter-spacing: 1.5px;
     }
 
     .hero h1 {
         max-width: 100%;
-        margin-bottom: 25px;
-        font-size: 2.5rem;
+        margin-bottom: 26px;
+        font-size: 2.75rem;
         line-height: 1.08;
         letter-spacing: -1px;
     }
 
     .heroTexto {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.0625rem;
+        line-height: 1.65;
     }
 
     .heroBotoes {
@@ -521,35 +486,34 @@ body {
         text-align: center;
     }
 
-
     /* SOBRE */
 
     .sobre {
         min-height: auto;
         flex-direction: column;
         text-align: center;
-        padding: 70px 7%;
-        gap: 40px;
+        gap: 30px;
+        padding: 80px 7%;
     }
 
     .sobreTexto {
         width: 100%;
+        max-width: 650px;
     }
 
     .sobreTexto h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
         text-align: center;
     }
 
     .sobreTexto p {
-        font-size: 0.9375rem;
+        font-size: 1rem;
     }
 
     .sobreImagem {
-        width: 220px;
-        height: 220px;
+        width: 260px;
+        height: 260px;
     }
-
 
     /* HABILIDADES */
 
@@ -561,7 +525,7 @@ body {
 
     .habilidadesGrupo h2 {
         margin-bottom: 35px;
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .habilidadesGrid {
@@ -570,9 +534,7 @@ body {
     }
 
     .habilidadeItem {
-        width: 120px;
-
-        font-size: 0.8125rem;
+        font-size: 0.9375rem;
     }
 
     .habilidadeImagem {
@@ -586,7 +548,6 @@ body {
         margin: 0 auto;
     }
 
-
     /* SEÇÕES */
 
     .secao {
@@ -595,11 +556,10 @@ body {
     }
 
     .secao h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .secao p {
-        font-size: 0.9375rem;
+        font-size: 1rem;
     }
-
 }
