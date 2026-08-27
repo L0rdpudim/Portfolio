@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
+
 /* RESET */
 
 * {
@@ -10,29 +11,32 @@
     box-sizing: border-box;
 }
 
+
 /* CONFIGURAÇÕES GERAIS */
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     min-height: 100vh;
     font-family: "Nunito", sans-serif;
     color: white;
-    margin: 0;
+    background: #000;
 }
+
 
 /* NAVBAR */
 
 .headerPai {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .navbar {
@@ -59,15 +63,18 @@ body {
     display: block;
     padding: 18px 8px;
     color: white;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #7628ff;
+    color: #9517d4;
     transform: translateY(-2px);
 }
 
@@ -75,15 +82,15 @@ body {
     display: none;
 }
 
+
 /* HERO */
 
 .hero {
-    min-height: 105vh;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 120px 30px 80px;
+    padding: 120px 8% 80px;
+
     background: linear-gradient(
         120deg,
         #004aad,
@@ -91,13 +98,16 @@ body {
         #5e17eb,
         #490450
     );
+
     background-size: 300% 300%;
     animation: gradientAnimation 20s ease infinite;
 }
 
-/* ANIMAÇÃO DO DEGRADÊ */
+
+/* ANIMAÇÃO DO GRADIENTE */
 
 @keyframes gradientAnimation {
+
     0% {
         background-position: 0% 50%;
     }
@@ -109,50 +119,109 @@ body {
     100% {
         background-position: 0% 50%;
     }
+
 }
 
-/* TITULO */
+
+/* CONTEÚDO DO HERO */
+
+.heroConteudo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* TAG */
+
+.heroTag {
+    margin-bottom: 24px;
+    color: #c3b1ff;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* TÍTULO */
 
 .hero h1 {
-    font-size: clamp(35px, 5vw, 58px);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 90px;
+    max-width: 800px;
+    margin-bottom: 28px;
+    color: white;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+
     text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.25),
-        0 0 20px rgba(120, 40, 255, 0.5);
+        0 0 8px rgba(255, 255, 255, 0.12),
+        0 0 25px rgba(120, 40, 255, 0.3);
 }
 
-/* DESCRIÇÃO */
-
-.heroDescricao {
-    width: 80%;
-    max-width: 900px;
-    border: 2px solid white;
-    padding: 10px 25px;
-    text-align: center;
-    border-radius: 20px;
+.hero h1 span {
+    color: #d0a8ff;
 }
 
-.heroDescricao .destaque {
-    font-size: 18px;
+
+/* TEXTO */
+
+.heroTexto {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+
+/* BOTÕES */
+
+.heroBotoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heroBotoes a {
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 0.875rem;
     font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.heroDescricao p {
-    font-size: 16px;
+
+.botaoPrimario {
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
+
+.heroBotoes a:hover {
+    transform: translateY(-3px);
+}
+
+.botaoPrimario:hover {
+    background: #171717;
+}
+
 
 /* CONTEÚDO */
 
 .conteudo {
     position: relative;
     background: #000;
-    padding:  5% 0;
+    padding: 5% 0;
     border-radius: 20px 20px 0 0;
     margin-top: -20px;
     z-index: 2;
 }
+
 
 /* SOBRE */
 
@@ -163,11 +232,12 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 70px;
-    padding: 60px 5%;
+    padding: 80px 7%;
     overflow: hidden;
 }
 
-/* TEXTO */
+
+/* TEXTO SOBRE */
 
 .sobreTexto {
     width: 55%;
@@ -176,25 +246,31 @@ body {
 }
 
 .sobreTexto h2 {
-    color: #7628ff;
-    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 20px;
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
     line-height: 1.15;
-    margin-bottom: 15px;
-    text-align: center;
+    text-align: left;
+}
+
+.sobreTexto h2 span {
+    color: #9517d4;
 }
 
 .sobreNome {
     margin-bottom: 22px;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 600;
 }
 
 .sobreTexto p {
     max-width: 650px;
-    font-size: 15px;
-    line-height: 1.6;
     margin-bottom: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
+
 
 /* IMAGEM SOBRE */
 
@@ -205,7 +281,7 @@ body {
     height: 280px;
     flex-shrink: 0;
     border-radius: 50%;
-    border: 5px solid #7628ff;
+    border: 5px solid #9517d4;
     overflow: hidden;
     background: #222;
     display: flex;
@@ -220,11 +296,129 @@ body {
     display: block;
 }
 
+
+/* HABILIDADES */
+
+.habilidades {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    align-items: stretch;
+    gap: 60px;
+    padding: 80px 7%;
+    background: #000;
+}
+
+.habilidadesGrupo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.habilidadesGrupo h2 {
+    margin-bottom: 55px;
+    color: #9517d4;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.habilidadesGrid {
+    width: 100%;
+    max-width: 430px;
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(110px, 1fr)
+    );
+
+    gap: 50px 55px;
+    justify-items: center;
+}
+
+.habilidadeItem {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.habilidadeItem:hover {
+    transform: translateY(-5px);
+}
+
+.habilidadeImagem {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.habilidadeImagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    
+    /* Filtro cinza para as imagens*/
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.habilidadeItem:hover .habilidadeImagem img {
+    filter: grayscale(0%);
+}
+
+.habilidadesDivisoria {
+    width: 2px;
+    min-height: 330px;
+    background: white;
+    border-radius: 99px;
+    align-self: center;
+}
+
+
+/* SEÇÕES FUTURAS */
+
+.secao {
+    min-height: 500px;
+    padding: 100px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #000;
+}
+
+.secao h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.secao p {
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
 /* CELULAR */
 
 @media (max-width: 700px) {
-
-    /* NAVBAR */
 
     /* NAVBAR */
 
@@ -258,21 +452,19 @@ body {
         position: absolute;
         top: 60px;
         right: 0;
-
         width: 180px;
-
         display: flex;
         flex-direction: column;
         align-items: stretch;
-
         padding: 8px;
         border-radius: 15px;
-
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-
         transform: translateY(-10px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
     }
 
     .navbar ul.menuAberto {
@@ -280,10 +472,6 @@ body {
         visibility: visible;
         pointer-events: auto;
         transform: translateY(0);
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease;
     }
 
     .navbar li {
@@ -291,136 +479,89 @@ body {
     }
 
     .navbar a {
-        font-size: 13px;
         padding: 14px 10px;
+        font-size: 0.8125rem;
         text-align: left;
     }
+
 
     /* HERO */
 
     .hero {
-        min-height: 450px;
-        padding-top: 100px;
+        min-height: 100vh;
+        padding: 110px 8% 70px;
+    }
+
+    .heroTag {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        letter-spacing: 1.5px;
     }
 
     .hero h1 {
-        margin-bottom: 60px;
-        font-size: 35px;
+        max-width: 100%;
+        margin-bottom: 25px;
+        font-size: 2.5rem;
+        line-height: 1.08;
+        letter-spacing: -1px;
     }
 
-    .heroDescricao {
-        width: 95%;
-        padding: 12px;
+    .heroTexto {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
-    .heroDescricao .destaque {
-        font-size: 16px;
+    .heroBotoes {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 240px;
     }
 
-    .heroDescricao p {
-        font-size: 13px;
+    .heroBotoes a {
+        text-align: center;
     }
+
 
     /* SOBRE */
 
     .sobre {
-        padding: 50px 5%;
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 7%;
+        gap: 40px;
+    }
+
+    .sobreTexto {
+        width: 100%;
     }
 
     .sobreTexto h2 {
-        font-size: 32px;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .sobreTexto p {
+        font-size: 0.9375rem;
     }
 
     .sobreImagem {
         width: 220px;
         height: 220px;
     }
-}
 
-/* HABILIDADES */
 
-.habilidades {
-    display: grid;
-    grid-template-columns: 1fr 2px 1fr;
-    align-items: stretch;
-    gap: 60px;
-    padding: 80px 7%;
-    background: #000;
-}
-
-.habilidadesGrupo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.habilidadesGrupo h2 {
-    margin-bottom: 55px;
-    color: #7628ff;
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1;
-    text-align: center;
-}
-
-.habilidadesGrid {
-    width: 100%;
-    max-width: 430px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(110px, 1fr));
-    gap: 50px 55px;
-    justify-items: center;
-}
-
-.habilidadeItem {
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.habilidadeImagem {
-    width: 110px;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.habilidadeImagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.habilidadesDivisoria {
-    width: 2px;
-    min-height: 330px;
-    background: white;
-    border-radius: 99px;
-    align-self: center;
-}
-
-/* HABILIDADES - CELULAR */
-
-@media (max-width: 700px) {
+    /* HABILIDADES */
 
     .habilidades {
         grid-template-columns: 1fr;
         gap: 45px;
-        padding: 65px 6%;
+        padding: 70px 6%;
     }
 
     .habilidadesGrupo h2 {
         margin-bottom: 35px;
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     .habilidadesGrid {
@@ -430,7 +571,8 @@ body {
 
     .habilidadeItem {
         width: 120px;
-        font-size: 13px;
+
+        font-size: 0.8125rem;
     }
 
     .habilidadeImagem {
@@ -443,4 +585,21 @@ body {
         min-height: 2px;
         margin: 0 auto;
     }
+
+
+    /* SEÇÕES */
+
+    .secao {
+        min-height: 400px;
+        padding: 80px 7%;
+    }
+
+    .secao h2 {
+        font-size: 2rem;
+    }
+
+    .secao p {
+        font-size: 0.9375rem;
+    }
+
 }
