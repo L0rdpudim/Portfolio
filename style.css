@@ -470,8 +470,7 @@ body {
 }
 
 .contatoItem:hover .contatoIcone {
-    background: white;
-    color: #000;
+    background: #9517d4;
     transform: scale(1.05);
 }
 
@@ -503,8 +502,53 @@ body {
 }
 
 .contatoItem:hover .contatoSeta {
-    color: white;
+    color: #9517d4;
     transform: translate(3px, -3px);
+}
+
+/* RODAPÉ */
+
+.rodape {
+    position: relative;
+    min-height: 120px;
+    padding: 30px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rodape p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.875rem;
+}
+
+.rodape strong {
+    color: white;
+    font-weight: 700;
+}
+
+.voltarTopo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.voltarTopo:hover {
+    background: #9517d4;
+    transform: translateY(-4px);
 }
 
 /* CELULAR */
@@ -727,5 +771,24 @@ body {
 
     .contatoInfo p {
         font-size: 0.8125rem;
+    }
+
+    /* RODAPÉ */
+
+    .rodape {
+        min-height: 150px;
+        padding: 25px 7%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .rodape p {
+        font-size: 0.8125rem;
+    }
+
+    .voltarTopo {
+        width: 45px;
+        height: 45px;
     }
 }
