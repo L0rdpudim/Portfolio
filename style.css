@@ -358,7 +358,7 @@ body {
     align-self: center;
 }
 
-/* SEÇÕES FUTURAS */
+/* PROJETOS */
 
 .secao {
     min-height: 500px;
@@ -383,6 +383,128 @@ body {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.0625rem;
     line-height: 1.7;
+}
+
+/* CONTATO */
+
+.contato {
+    min-height: 650px;
+    padding: 110px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.contatoCabecalho {
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.contatoCabecalho h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.contatoCabecalho h2 span {
+    color: white;
+}
+
+.contatoCabecalho > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+.contatoGrid {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.contatoItem {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 24px;
+    background: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    color: white;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.contatoItem:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: #111;
+}
+
+.contatoIcone {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.4rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contatoItem:hover .contatoIcone {
+    background: white;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.contatoInfo {
+    min-width: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.contatoInfo span {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1.0625rem;
+    font-weight: 800;
+}
+
+.contatoInfo p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.contatoSeta {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contatoItem:hover .contatoSeta {
+    color: white;
+    transform: translate(3px, -3px);
 }
 
 /* CELULAR */
@@ -548,7 +670,7 @@ body {
         margin: 0 auto;
     }
 
-    /* SEÇÕES */
+    /* PROJETOS */
 
     .secao {
         min-height: 400px;
@@ -561,5 +683,49 @@ body {
 
     .secao p {
         font-size: 1rem;
+    }
+
+    /* CONTATO */
+
+    .contato {
+        min-height: auto;
+        padding: 80px 7%;
+    }
+
+    .contatoCabecalho {
+        margin-bottom: 40px;
+    }
+
+    .contatoCabecalho h2 {
+        font-size: 2.25rem;
+    }
+
+    .contatoCabecalho > p:last-child {
+        font-size: 1rem;
+    }
+
+    .contatoGrid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contatoItem {
+        min-height: 95px;
+        padding: 18px;
+        gap: 15px;
+    }
+
+    .contatoIcone {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .contatoInfo span {
+        font-size: 1rem;
+    }
+
+    .contatoInfo p {
+        font-size: 0.8125rem;
     }
 }
